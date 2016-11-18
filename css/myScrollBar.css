@@ -1,5 +1,45 @@
-.qq{
+html,body,div{
+	margin:0;
+	padding:0;
+}
+.box{
 	width:200px;
-	height:200px;
-	background-color:red;
+	height:600px;
+	border:10px solid red;
+	overflow:hidden;
+	position:relative;
+}
+.scrollBar{
+	position:absolute;
+	top:0;
+	right:0;
+	width:7px;
+	height:100px;
+	background-color:#c1c2c5;
+	border-radius:2px;
+	user-select:none;
+}
+.item{
+	width:190px;
+	height:190px;
+	background-color:pink;
+	border:5px solid blue;
+	line-height:190px;
+	text-align:center;
+	color:green;
+	font-size:50px;
+	user-select:none;
+}
+.item1{
+	margin-top:0;
+}
+.addBtn{
+	position:fixed;
+	top:0;
+	left:300px;
+	width:80px;
+	height:30px;
+	background-color:green;
+	color:#fff;
+	border:1px solid blue;
 }
