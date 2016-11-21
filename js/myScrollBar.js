@@ -16,7 +16,7 @@ box.addEventListener('mousewheel',function(e){//要阻止冒泡，页面的大�
 	e.stopPropagation();
 	e.preventDefault();
 	if(e.deltaY > 0){//这个防抖动不能直接照抄了，滚轮滑动有两个方向
-		scrollBar.style.top =((Number((scrollBar.style.top).replace('px','')) + mouseWheelUnit) <= scrollBarMaxLimit)?Number((scrollBar.style.top).replace('px','')) + mouseWheelUnit + 'px':scrollBar.style.top = scrollBarMaxLimit + 'px';
+		scrollBar.style.top =((Number((scrollBar.style.top).replace('px','')) + mouseWheelUnit) <= scrollBarMaxLimit)?Number((scrollBar.style.top).replace('px','')) + mouseWheelUnit + 'px':scrollBarMaxLimit + 'px';
 		contentScroll();
 	} else {//先绝对值在取负值可以
 		scrollBar.style.top = (0 <= (Number((scrollBar.style.top).replace('px','')) - mouseWheelUnit))?Number((scrollBar.style.top).replace('px','')) + -mouseWheelUnit + 'px':0 + 'px';
@@ -117,3 +117,22 @@ function newDomRefresh(){//添加新dom之后
 //初步完成，接下来：
 //	1.封装成对象
 //	2.与项目结合
+
+
+
+//11.21的工作:
+//https://github.com/adaburrows/jquery.ui.scrollbar
+//https://plugins.jquery.com/tag/scrollbar/
+//绝对定位的东东放进去top会被改变。。。。
+//我的逻辑会覆盖它的吗?
+//明白了,里面只要是绝对定位的都会被看做是排序项
+//又在外面加了一个框。
+//拉下拉框选中文本的问题也解决了。加class类名
+//有些函数各处都用的，倒是可以封装在一起。
+//
+//
+//
+//
+//1.容器高和内容高变化的时候滚动条的位置
+//2.状态切换时的进度条
+//3.文本选择时，滚动条的bug
