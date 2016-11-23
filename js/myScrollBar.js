@@ -135,6 +135,14 @@ function newDomRefresh(){//添加新dom之后
 //
 //1.容器高和内容高变化的时候滚动条的位置 解决
 //2.状态切换时的进度条                   解决
-//3.文本选择时，滚动条的bug
+//3.文本选择时，滚动条的bug              解决
 //4.第一个dom复制与删除时的margin-top值。解决
-//5.当删除dom的时候,如果dom比较靠下，删除之后,滚动条位置也会异常
+//5.当删除dom的时候,如果dom比较靠下，删除之后,滚动条位置也会异常  解决
+//
+//
+//发现了新的兼容性问题。火狐浏览器，鼠标移出浏览器之后，松下鼠标事件不被捕获
+//把$(*).on('mouseup',function(){}) 改成了 $(window).on('mouseup',function(){})
+//
+//
+//http://www.runoob.com/cssref/css3-pr-filter.html
+//今天遇到的css3的滤镜属性
